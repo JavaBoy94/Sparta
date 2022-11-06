@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function hey() {
+            $.ajax({
+                type: "POST",
+                url: "/test",
+                data: {title_give: '봄날은간다'},  //post 요청시 data 입력
+                success: function (response) {   //여기서 말하는 response는 해당 api요청에 대한 서버의 응답(리턴값)을 말함
+                    console.log(response['result']) //해당 리턴값이 딕셔너리 형태이기 때문에 특정 키값도 선택 가능
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+  <h1>첫 웹페이지!</h1>
+  <button onclick="hey()">버튼!</button>
+</body>
+</html>
